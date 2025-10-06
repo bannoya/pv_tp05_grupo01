@@ -1,7 +1,8 @@
 import { Container } from "react-bootstrap"
 import { Routes, Route } from "react-router-dom"
 import Layouts from "../src/assets/pages/Layouts"
-
+import Home from "../src/assets/pages/Home"
+import Games from "./assets/pages/Games"  
 
 function App() {
 
