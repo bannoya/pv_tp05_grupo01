@@ -13,8 +13,6 @@ function App() {
         <Route path="/" element={<Layouts />}>
           <Route index element={<Home />}></Route>
           <Route index element={<Games/>}></Route>
-
-
         </Route>
       </Routes>
     </Container>
