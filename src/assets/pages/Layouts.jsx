@@ -1,59 +1,44 @@
-import { Outlet } from "react-router-dom";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import Container from 'react-bootstrap/Container';
+import { Outlet, Link } from "react-router-dom";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+
 function Layouts() {
-
-
     return (
         <>
-            <header>
-                <h1>
-                    Menu
-                </h1>
-                <Navbar expand="lg" className="bg-body-tertiary">
+            <header style={{paddingBottom :"1px"}}>
+                <Navbar expand="lg" bg="dark" data-bs-theme="dark">
                     <Container>
-                        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/home">
+                            🏠 Home
+                        </Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#home">Home</Nav.Link>
-                                <Nav.Link href="#link">Link</Nav.Link>
-                                <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Another action
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <Nav.Link as={Link} to="/games">
+                                    🎮 Games
+                                </Nav.Link>
+                                <Nav.Link as={Link} to="/aboutUS">
+                                    ℹ️ About
+                                </Nav.Link>
+                                <NavDropdown title="Opciones" id="basic-nav-dropdown">
+                                    <NavDropdown.Item href="#action/1">Action</NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/2">Another action</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Separated link
-                                    </NavDropdown.Item>
+                                    <NavDropdown.Item href="#action/3">Separated link</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-
-
-
             </header>
 
-
-            <main>
-                <h1></h1>
-
-                <Outlet></Outlet>
+            <main style={{ padding: "1px", textAlign: "center" }}>
+                <Outlet />
             </main>
-
-
-
-
-
-
+            <footer  className="bg-dark text-light text-center py-3">
+                 En desarrollo.
+            </footer>
         </>
-
-    )
-
+    );
 }
 
-export default Layouts
+export default Layouts;
