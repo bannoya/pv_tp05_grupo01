@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 import Layouts from "../src/assets/pages/Layouts";
 import Home from "../src/assets/pages/Home";
-import Games from "../src/assets/pages/Games"; // usa ruta consistente
+import Games from "./assets/components/Estrella"; // usa ruta consistente
 import AboutUs from "./assets/pages/AboutUs"; 
 import Error from "./assets/pages/Error";
 function App() {
