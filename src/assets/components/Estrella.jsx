@@ -4,7 +4,7 @@ import recogerSound from "../audio/recoger.mp3";
 import winSound from "../audio/win.mp3";
 
 
-export default function Games() {
+export default function GameEstrella() {
     const [puntaje, setPuntaje] = useState(0);
     const [posicionEstrella, setPosicionEstrella] = useState({ y: 0, x: 0 });
     const [visible, setVisible] = useState(false);
