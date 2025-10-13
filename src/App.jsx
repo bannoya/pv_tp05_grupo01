@@ -5,7 +5,7 @@ import Home from "../src/assets/pages/Home";
 import Games from "../src/assets/pages/Games"; // usa ruta consistente
 import AboutUs from "./assets/pages/AboutUs";
 import Error from "./assets/pages/Error";
-import Estrella from "../src/assets/components/Estrella";
+import GameEstrella from "../src/assets/components/Estrella";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route index element={<Home />} />
 
           <Route path="games" element={<Games />}>
-            <Route path="estrella" element={<Estrella />} />
+            <Route path="estrella" element={<GameEstrella />} />
           </Route>
 
           <Route path="aboutUs" element={<AboutUs />} />
