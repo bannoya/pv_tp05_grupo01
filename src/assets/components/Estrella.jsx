@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"; // importa bootstrap globalmente
+import recogerSound from "../audio/recoger.mp3";
+import winSound from "../audio/win.mp3";
 
 
 export default function Games() {
@@ -8,6 +10,9 @@ export default function Games() {
     const [visible, setVisible] = useState(false);
     const [mensaje, setMensaje] = useState("");
     const [juegoActivo, setJuegoActivo] = useState(false);
+    const sonidoRecoger = new Audio(recogerSound);
+    const sonidoGanar = new Audio(winSound);
+
 
 
     const posicionAlAzar = () => {
@@ -30,6 +35,8 @@ export default function Games() {
 
     const agarrarEstrella = () => {
         setPuntaje((prev) => prev + 1);
+        sonidoRecoger.currentTime = 0;
+        sonidoRecoger.play();
         setVisible(false);
     };
 
@@ -39,8 +46,10 @@ export default function Games() {
             setJuegoActivo(false);
             setMensaje("¡Ganaste! 🎉");
             setVisible(false);
+            sonidoGanar.play();
         }
     }, [puntaje]);
+
 
 
     const reiniciarJuego = () => {
@@ -49,6 +58,8 @@ export default function Games() {
         setJuegoActivo(true);
         setVisible(false);
     };
+
+
 
     return (
         <div className="container-fluid bg-dark text-light d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
