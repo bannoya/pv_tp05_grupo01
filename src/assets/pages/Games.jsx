@@ -2,10 +2,14 @@ import { Outlet } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { useTheme } from "../context/ThemeContext.jsx";
 
 export default function Games() {
+  const { darkMode } = useTheme();
   return (
-    <Card>
+
+    <Card className={`container-fluid d-flex flex-column justify-content-center align-items-center vh-100 text-center p-5 ${darkMode ? "bg-dark text-light" : "bg-light text-dark"
+      }`}>
       <Card.Header>Juego #1</Card.Header>
       <Card.Body>
         <Card.Title>Atrapa las Estrellas</Card.Title>
@@ -19,5 +23,6 @@ export default function Games() {
         <Outlet />
       </Card.Body>
     </Card>
+
   );
 }
