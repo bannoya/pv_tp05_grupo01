@@ -1,8 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useTheme } from "../context/ThemeContext.jsx";
 
 function AboutUs() {
+  const { darkMode } = useTheme();
+
   return (
-    <div className="container-fluid bg-dark text-light d-flex flex-column justify-content-center align-items-center vh-100 text-center p-5">
+    <div
+      className={`container-fluid d-flex flex-column justify-content-center align-items-center vh-100 text-center p-5 ${
+        darkMode ? "bg-dark text-light" : "bg-light text-dark"
+      }`}
+    >
       <div className="w-100">
         <h1 className="fw-bold text-warning mb-4 display-4">Proyecto X</h1>
 
@@ -21,14 +28,17 @@ function AboutUs() {
           experiencias interactivas.
         </p>
 
-        <p className="fs-4 text-success fw-semibold mx-auto" style={{ maxWidth: "900px" }}>
+        <p
+          className="fs-4 text-success fw-semibold mx-auto"
+          style={{ maxWidth: "900px" }}
+        >
           Nos une la pasión por crear, aprender y superarnos en cada proyecto.
           Creemos que los videojuegos no solo entretienen, sino que también
           inspiran y conectan a las personas. 🎮
         </p>
 
         <p className="mt-4 text-info fst-italic fs-5">
-          ¡Seguimos creciendo como equipo y soñando en grande! 🚀  
+          ¡Seguimos creciendo como equipo y soñando en grande! 🚀
           Abrazo del equipo de <strong>Proyecto X</strong>.
         </p>
       </div>
