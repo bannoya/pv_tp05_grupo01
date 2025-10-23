@@ -1,17 +1,17 @@
 import { Outlet, Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { useTheme } from "../context/ThemeContext.jsx"; // 👈 importa el hook
+import { useTheme } from "../context/ThemeContext.jsx"; 
 
 function Layouts() {
-  const { darkMode, toggleTheme } = useTheme(); // 👈 usa el contexto
+  const { darkMode, toggleTheme } = useTheme(); 
 
   return (
     <>
-      {/* HEADER */}
+  
       <header style={{ paddingBottom: "1px" }}>
         <Navbar
           expand="lg"
-          bg={darkMode ? "dark" : "light"} // 👈 cambia el color del navbar
+          bg={darkMode ? "dark" : "light"} 
           data-bs-theme={darkMode ? "dark" : "light"}
         >
           <Container>
@@ -50,12 +50,11 @@ function Layouts() {
             </button>
           </div>
 
-          {/* ✅ Contenido dinámico */}
+       
           <Outlet />
         </div>
       </header>
 
-      {/* FOOTER */}
       <footer
         className={`mt-auto text-center py-4 ${
           darkMode ? "bg-dark text-light" : "bg-light text-dark"
