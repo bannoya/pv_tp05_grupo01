@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css"; // importa bootstrap globalmente
+import "bootstrap/dist/css/bootstrap.min.css"; 
 import recogerSound from "../audio/recoger.mp3";
 import winSound from "../audio/win.mp3";
 
 
-export default function GameEstrella() {
+export default function Estrella() {
     const [puntaje, setPuntaje] = useState(0);
     const [posicionEstrella, setPosicionEstrella] = useState({ y: 0, x: 0 });
     const [visible, setVisible] = useState(false);

@@ -28,7 +28,7 @@ export default function Games() {
         }`}
         style={{
           width: "100%",
-          maxWidth: "900px", // 🔹 más ancho que antes
+          maxWidth: "900px", 
           borderRadius: "1.5rem",
           transition: "transform 0.3s ease, box-shadow 0.3s ease",
         }}
